@@ -8,11 +8,10 @@ const Schema = mongoose.Schema;
 
 app.use(express.static('public'));
 
+app.get('/',)
+
 app.post('/save', (req, res) => {
-  Image.create({
-    name : req.body.name,
-    pixelStates : req.body.pixelStates
-  });
+
 });
 
 app.listen(3000, () => {
@@ -24,6 +23,7 @@ db.once('open', () => {
   console.log('Database connected!');
   const pixelPainterSchema = new Schema({
     username : {type : String, required : true, unique : true },
+    url : {type : String, required : true}
     title : {type : String, required : true},
     pixelStates : [],
     createdAt : Date,
