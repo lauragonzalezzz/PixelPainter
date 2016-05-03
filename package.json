@@ -1,0 +1,25 @@
+{
+  "name": "PixelPainter",
+  "version": "1.0.0",
+  "description": "PixelPainter ============",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lauragonzalezzz/PixelPainter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lauragonzalezzz/PixelPainter/issues"
+  },
+  "homepage": "https://github.com/lauragonzalezzz/PixelPainter#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "mongoose": "^4.4.14"
+  }
+}
