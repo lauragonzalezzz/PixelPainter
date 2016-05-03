@@ -25,18 +25,16 @@ promptMachine();
 
 //pixelPainterRuns
 
-  // var colorArray = ['heart', 'pink', 'blue', 'purple', 'green', 'red', 'yellow', 'brown', 'black', 'white'];
-
   var storecolor = null;
 
   document.getElementById('heart').addEventListener('click', function(event){
      storecolor = 'heart';
   });
-  
+
   document.getElementById('star').addEventListener('click', function(){
      storecolor = 'star';
   });
-  
+
   document.getElementById('circle').addEventListener('click', function(){
      storecolor = 'circle';
   });
@@ -49,7 +47,7 @@ promptMachine();
 
 // Create Color Buttons
   var colors = ['#FF557C', '#E84DBE', '#EB61FF', '#AA4DE8', '#8D55FF', '#4447E8', '#5886FF', '#449DE8', '#4BDCFF', '#47E8B0', '#5BFF98', '#47E856', '#79FF4E', '#FFB944', '#FF8F50', '#E8611F', '#FF5044', '#E8271F', '#FF2274', '#FF1244'];
-  
+
   var paintColorContainer = document.getElementById('paintColors');
 
   function createPaintColorButtons() {
@@ -83,9 +81,9 @@ createPaintColorButtons();
 
 
 // Adds event listeners to the grid and the individual divs
-    
+
   var keepGoing = false;
-  
+
   function addEventListener() {
 
     outerDiv.addEventListener('mousedown', function(event) {
@@ -118,7 +116,7 @@ createPaintColorButtons();
     if(keepGoing === false) {
       outerDiv.addEventListener('mouseup', function(event) {
         keepGoing = false;
-      }); 
+      });
     } //END OF MOUSEUP
   }  //End of addEventListener function
 
@@ -134,8 +132,15 @@ createPaintColorButtons();
       divsToClear[i].className = 'empty';
     }
   }
+//Save Button and XHR
+ var saveBtn = document.getElementById('saveBtn');
+  saveBtn.addEventListener('click', function(event){
+    event.preventDefault();
 
-
+    var xReq = new XMLHttpRequest();
+    xReq.addEventListener('load', (event) => {});
+    xReq.open("POST", )
+  });
 
 }//End of Pixel Painter
 
