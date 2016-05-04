@@ -1,1 +1,18 @@
-- console.log(masterpiece)
+html
+  head
+    title Pixel Painter!
+    link(href='/css/jade.css' rel="stylesheet")
+  body
+    header Pixel Painter
+    div#saveDiv
+      input#nameInput(type="text" placeholder="Name Your Masterpiece")
+      button#saveBtn Save
+    //- div.colors
+    //-   each color in colors
+    //-     div.paintColor(style='background:#{color}; width:50px; height:50px;')
+    div.container
+      each pixel in pixelStates
+        div.pixel(style='background:#{pixel}; width:25px; height:25px;')
+    div#eraseDiv
+      button#eraseBtn Erase
+      button#clearBtn Clear All
