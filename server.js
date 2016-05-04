@@ -33,11 +33,11 @@ const pixelPainterSchema = new Schema({
 
 const Masterpiece = mongoose.model('Masterpiece', pixelPainterSchema);
 app.get('/:name', (req, res) => {
-  Masterpiece.find((err, masterpiece) => {
+  Masterpiece.find({ name : req.params.name}, (err, masterpiece) => {
     if(err){
       return console.error(err);
     }
-    res.render('/saved', { masterpiece : masterpiece });
+    res.render('saved', { masterpiece : masterpiece });
   });
 });
 
