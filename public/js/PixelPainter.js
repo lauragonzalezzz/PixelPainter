@@ -1,27 +1,5 @@
 function pixelpainter() {
 
-// Prompt
-  var units = 0;
-
-  function promptMachine() {
-
-  var unitsPrompt = prompt('Would you like a small or large canvas? Please enter small or large.');
-  unitsPrompt.toLowerCase();
-
-  if (unitsPrompt === 'small') {
-    document.getElementById('gridDiv').className = 'gridDivSmall';
-    units = 256;
-  }
-  else if (unitsPrompt === 'large') {
-   document.getElementById('gridDiv').className = 'gridDivLarge';
-   units = 806;
-  }
-  else {
-    units = 812;
-  }
-}
-
-promptMachine();
 
 //pixelPainterRuns
 
@@ -67,7 +45,8 @@ createPaintColorButtons();
 
 // Create Little Divs
 
-  outerDiv = document.getElementById('gridDiv');
+  var units = 812;
+  var outerDiv = document.getElementById('gridDiv');
 
   function  createLittleDivs() {
     for(var i = 0; i < units; i++) {
