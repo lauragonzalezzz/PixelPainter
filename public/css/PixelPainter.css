@@ -87,7 +87,7 @@ h1 {
 
 /* No Color Grid Class*/
 
-.empty {
+.allDivs {
   height : 25px;
   width : 25px;
   border:  1px solid grey;
