@@ -72,7 +72,7 @@ createPaintColorButtons();
   function  createLittleDivs() {
     for(var i = 0; i < units; i++) {
       var newDiv = document.createElement('div');
-      newDiv.className = 'empty';
+      newDiv.className = 'allDivs';
       outerDiv.appendChild(newDiv);
     }
   }
@@ -124,23 +124,14 @@ createPaintColorButtons();
 
 // Clear Button Functionality
 
-  divsToClear = document.querySelectorAll('.empty');
+  divsToClear = document.querySelectorAll('.allDivs');
 
   function clearAll(event) {
     for(var i = 0; i < divsToClear.length; i++) {
       divsToClear[i].style.background = null;
-      divsToClear[i].className = 'empty';
+      divsToClear[i].className = 'allDivs';
     }
   }
-//Save Button and XHR
- var saveBtn = document.getElementById('saveBtn');
-  saveBtn.addEventListener('click', function(event){
-    event.preventDefault();
-
-    var xReq = new XMLHttpRequest();
-    xReq.addEventListener('load', (event) => {});
-    xReq.open("POST", )
-  });
 
 }//End of Pixel Painter
 
