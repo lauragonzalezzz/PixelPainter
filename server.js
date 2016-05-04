@@ -10,6 +10,8 @@ const bodyParser = require('body-parser');
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended : true}));
 
+app.set('view engine', 'jade');
+app.set('views', './views');
 // app.get('/', (req, res) => {
 // });
 
@@ -30,7 +32,14 @@ const pixelPainterSchema = new Schema({
 });
 
 const Masterpiece = mongoose.model('Masterpiece', pixelPainterSchema);
-
+app.get('/:name', (req, res) => {
+  Masterpiece.find((err, masterpiece) => {
+    if(err){
+      return console.error(err);
+    }
+    res.render('/saved', { masterpiece : masterpiece });
+  });
+});
 
 app.post('/save', (req, res) => {
   const image = new Masterpiece({
