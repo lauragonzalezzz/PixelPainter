@@ -34,10 +34,13 @@ const pixelPainterSchema = new Schema({
 const Masterpiece = mongoose.model('Masterpiece', pixelPainterSchema);
 app.get('/:name', (req, res) => {
   Masterpiece.find({ name : req.params.name}, (err, masterpiece) => {
+  let pixelInfo = masterpiece[0].pixelStates[0];
+  pixelInfo = pixelInfo.split("$,");
+  pixelInfo[pixelInfo.length-1] = pixelInfo[pixelInfo.length-1].slice(0, -1);
     if(err){
       return console.error(err);
     }
-    res.render('saved', { masterpiece : masterpiece });
+    res.render('saved', { pixelStates : pixelInfo });
   });
 });
 
@@ -51,6 +54,7 @@ app.post('/save', (req, res) => {
       return console.error(err);
     };
   });
+  console.log("File Saved");
 });
 
 
