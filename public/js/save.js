@@ -9,10 +9,10 @@ saveBtn.addEventListener('click', (event) => {
   const pixelStates = [];
   for (let i = 0; i < pixels.length; i++) {
     if (!pixels[i].style.background){
-      pixelStates.push("empty");
+      pixelStates.push("rgb(255, 255, 255)$");
     }
     else {
-      pixelStates.push(pixels[i].style.background);
+      pixelStates.push(pixels[i].style.background + "$");
     }
   }
 
